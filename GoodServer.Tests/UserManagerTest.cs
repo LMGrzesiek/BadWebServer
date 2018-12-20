@@ -1,5 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using GoodServer.Services;
+using GoodServer.Data;
 
 namespace GoodServer.Tests
 {

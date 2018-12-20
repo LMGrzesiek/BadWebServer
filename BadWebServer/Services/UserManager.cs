@@ -4,16 +4,39 @@ using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GoodServer.Services
+namespace GoodServer.Data
 {
-    public class User
-    {
-        public string Email { get; set; }
-        public string Password { get; set; }
-    }
+    
 
     public class UserManager
     {
+        public async Task<bool> UpdateAsync(User user)
+        {
+            bool result = false;
+            await Task.Run(() =>
+            {
+                lock (sync_lock)
+                {
+                    LoadDictionary();
+                    foreach (var u in _users)    //Loop through the list until you find the user with the matching email
+                    {
+                        if (u.Email == user.Email)  //Update the first and last name of this user
+                        {
+                            u.FirstName = user.FirstName;
+                            u.LastName = user.LastName;
+                            u.PictureUrl = user.PictureUrl;
+                            result = true;
+                            break;
+
+                        }
+                    }
+                    SaveDictionary();
+                }
+
+            });
+            return result;
+        }
+
         private static List<User> _users = null;
 
         private const string filename = "users.xml";
