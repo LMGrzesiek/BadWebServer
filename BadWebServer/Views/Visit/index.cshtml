@@ -1,0 +1,17 @@
+﻿@model IEnumerable<string>
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+<h1>Welcome to the site</h1>
+<ol>
+    @foreach (var visitor in Model)
+    {
+        <li>@visitor</li>
+    }
+</ol>
+
+
+
+@section scripts{
+    <script type="text/javascript">window.console.log("You are on the Visit Page.  This script only runs on the visit page.")</script>
+}

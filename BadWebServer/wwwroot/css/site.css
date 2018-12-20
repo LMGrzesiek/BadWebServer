@@ -1,0 +1,28 @@
+﻿
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: -webkit-linear-gradient(top, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);
+}
+
+a {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+img {
+    border-radius: 30px;
+    padding: 10px;
+}
+
+label {
+    
+}
+
+input {
+    border-radius: 12px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+
+/*NAVBAR STYLE*/
+
+

@@ -1,0 +1,25 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using GoodServer.Models
+@model SignInViewModel
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+
+}
+<h1>Sign In</h1>
+@if (this.ViewData.ModelState.ErrorCount > 0)
+{
+    <div class="alert alert-danger">
+        @Html.ValidationSummary(false)
+    </div>
+}
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input class="form-control" type="email" asp-for="Email" required placeholder="user@domain.com" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input class="form-control" type="password" asp-for="Password" required placeholder="password123" />
+    </div>
+    <input type="submit" class="btn btn-block btn-default" />
+</form>
